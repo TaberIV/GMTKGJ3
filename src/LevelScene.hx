@@ -62,12 +62,18 @@ class LevelScene extends Scene {
 		for (t in levelData.triggers) {
 			var nt = Trigger.levelTrigger(level, t.x, t.y, t.width, t.height, tileSize);
 			switch (t.action) {
-				case NextLevel(_):
+				case NextLevel:
 					nt.onActorExit = function(a) {
-						trace("Exit");
-						if (a.col.xMin >= nt.xMax)
+						if (a.col.xMin >= nt.xMax) {
 							game.setLevel(index + 1);
-					};
+						}
+					}
+				case End:
+					nt.onActorExit = function(a) {
+						if (a.col.xMin >= nt.xMax) {
+							game.setLevel(0);
+						}
+					}
 				case RefreshJump:
 					nt.onActorEnter = function(player) {
 						if (Std.downcast(player, Player) != null) {
@@ -80,6 +86,14 @@ class LevelScene extends Scene {
 		// Build level properties
 		var colMap = new Map<String, Level.LevelObject>();
 		colMap.set("full", Solid.levelSolid);
+
+		final spikeInset = 10;
+		final spikeMargin = 5;
+		colMap.set("deathBottom", Spikes.levelSpikeGen(2 * spikeMargin, spikeInset, spikeMargin, spikeMargin));
+		colMap.set("deathTop", Spikes.levelSpikeGen(2 * spikeInset, spikeMargin, spikeMargin, spikeMargin));
+		colMap.set("deathLeft", Spikes.levelSpikeGen(2 * spikeMargin, spikeMargin, spikeInset, spikeMargin));
+		colMap.set("deathRight", Spikes.levelSpikeGen(2 * spikeMargin, spikeMargin, spikeMargin, spikeInset));
+
 		level.buildProperty("collision", colMap);
 		Solid.levelSolid(level, -1, 0, 1, height, tileSize);
 	}
