@@ -25,8 +25,7 @@ class Player extends Actor {
 	private var jumpBoost:Float = 32;
 
 	private var bounceDecay:Float = 0.9;
-	private var stopMin:Float = 300;
-	private var bounceMin:Float = 5;
+	private var bounceMin(get, never):Float;
 
 	// Calculated movement values
 	private var moveForce:Float;
@@ -41,7 +40,6 @@ class Player extends Actor {
 	private var velY:Float = 0;
 
 	private var jumpCharge:Bool = true;
-	private var bounce:Bool = false;
 
 	// Collision state
 	private var colX:Solid;
@@ -53,6 +51,10 @@ class Player extends Actor {
 	private var controller:PlayerController;
 	private var ballSpr:Sprite;
 	private var walkSpr:Sprite;
+
+	function get_bounceMin() {
+		return controller.jumpDown ? 300 : 500;
+	}
 
 	override public function init() {
 		walkSpr = new Sprite(this, Res.img.player.purp);
@@ -77,16 +79,6 @@ class Player extends Actor {
 	public override function update(dt:Float):Void {
 		// Set frame constants
 		onGround = checkGrounded();
-
-		if (!onGround) {
-			if (Math.abs(velY) < bounceMin || Math.abs(velY) < stopMin && !controller.jumpDown) {
-				bounce = false;
-			}
-
-			if (Math.abs(velY) > stopMin) {
-				bounce = true;
-			}
-		}
 
 		// Acceleration
 		var accX = accelerateX(dt);
@@ -145,7 +137,6 @@ class Player extends Actor {
 		// Jump
 		if (onGround && jumpCharge && controller.jumpPressed) {
 			jumpCharge = false;
-			bounce = true;
 			velY = jumpVelocity;
 
 			// Jump boost
@@ -168,7 +159,7 @@ class Player extends Actor {
 	}
 
 	private function checkGrounded() {
-		if (col == null || bounce) {
+		if (col == null || velY < 0 || velY > bounceMin) {
 			return false;
 		}
 
@@ -176,18 +167,18 @@ class Player extends Actor {
 	}
 
 	private function onColX(solid:Solid) {
-		velX = solid.velX + (bounce ? -velX * bounceDecay : 0);
+		velX = solid.velX + (!checkGrounded() ? -velX * bounceDecay : 0);
 		colX = solid;
 	}
 
 	private function onColY(solid:Solid) {
-		velY = bounce || velY < 0 ? -velY * bounceDecay : 0;
+		velY = velY < 0 || velY > bounceMin ? -velY * bounceDecay : 0;
 
 		colY = solid;
 	}
 
 	public override function isRiding(solid:Solid):Bool {
-		if (bounce) {
+		if (velY < 0 || velY > bounceMin) {
 			return false;
 		}
 
