@@ -1,11 +1,9 @@
 -lib heaps:git:git@github.com:HeapsIO/heaps.git#ac34234
--lib hlsdl
 -lib castle
 -lib taber
 
 -cp src
 -D analyzer-optimize
--hl bin/game.hl
+-js bin/game.js
 -main Game
-
--D windowSize=640x480
+-dce full
