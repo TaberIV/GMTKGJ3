@@ -3,7 +3,6 @@
 -lib taber
 
 -cp src
--D analyzer-optimize
 -js bin/game.js
 -main Game
 -dce full

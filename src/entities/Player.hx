@@ -8,6 +8,7 @@ import collision.Collider;
 import util.Calc.*;
 import playerInput.PlayerController;
 import playerInput.PlayerAdditive;
+import playerInput.PlayerKeyboard;
 
 class Player extends Actor {
 	final width:Int = 16;
@@ -36,8 +37,8 @@ class Player extends Actor {
 	private var gravity:Float;
 
 	// Movement state
-	private var velX:Float;
-	private var velY:Float;
+	private var velX:Float = 0;
+	private var velY:Float = 0;
 
 	private var jumpCharge:Bool = true;
 	private var bounce:Bool = false;

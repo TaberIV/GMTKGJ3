@@ -31,6 +31,42 @@
 						"x": 1,
 						"y": 0
 					}
+				},
+				{
+					"id": "deatBottom",
+					"img": {
+						"file": "img/level/collision.png",
+						"size": 16,
+						"x": 0,
+						"y": 1
+					}
+				},
+				{
+					"id": "deathTop",
+					"img": {
+						"file": "img/level/collision.png",
+						"size": 16,
+						"x": 1,
+						"y": 1
+					}
+				},
+				{
+					"id": "deathLeft",
+					"img": {
+						"file": "img/level/collision.png",
+						"size": 16,
+						"x": 2,
+						"y": 1
+					}
+				},
+				{
+					"id": "deathRight",
+					"img": {
+						"file": "img/level/collision.png",
+						"size": 16,
+						"x": 3,
+						"y": 1
+					}
 				}
 			],
 			"separators": [],
@@ -190,8 +226,7 @@
 						{
 							"x": 1,
 							"y": 7,
-							"kind": "player",
-							"id": "player"
+							"kind": "player"
 						}
 					],
 					"triggers": [
@@ -263,8 +298,7 @@
 						{
 							"x": 1,
 							"y": 9,
-							"kind": "player",
-							"id": ""
+							"kind": "player"
 						}
 					],
 					"triggers": [],
@@ -436,7 +470,9 @@
 									"collision": "full"
 								},
 								null,
-								null,
+								{
+									"collision": "deathLeft"
+								},
 								null,
 								null,
 								null,
@@ -446,6 +482,22 @@
 								},
 								{
 									"collision": "full"
+								},
+								{
+									"collision": "deathRight"
+								},
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								{
+									"collision": "deatBottom"
+								},
+								{
+									"collision": "deathTop"
 								}
 							]
 						}
@@ -501,7 +553,7 @@
 				{
 					"typeStr": "0",
 					"name": "id",
-					"display": null
+					"opt": true
 				},
 				{
 					"typeStr": "3",
