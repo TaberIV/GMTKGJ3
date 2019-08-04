@@ -1,0 +1,574 @@
+{
+	"sheets": [
+		{
+			"name": "collision",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id"
+				},
+				{
+					"typeStr": "14",
+					"name": "img",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"id": "none",
+					"img": {
+						"file": "img/level/collision.png",
+						"size": 16,
+						"x": 0,
+						"y": 0
+					}
+				},
+				{
+					"id": "full",
+					"img": {
+						"file": "img/level/collision.png",
+						"size": 16,
+						"x": 1,
+						"y": 0
+					}
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "entity",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "kind",
+					"display": null
+				},
+				{
+					"typeStr": "14",
+					"name": "img",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"kind": "player",
+					"img": {
+						"file": "img/player/purp.png",
+						"size": 32,
+						"x": 0,
+						"y": 0
+					}
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "levels",
+			"columns": [
+				{
+					"name": "id",
+					"typeStr": "0"
+				},
+				{
+					"name": "width",
+					"typeStr": "3"
+				},
+				{
+					"name": "height",
+					"typeStr": "3"
+				},
+				{
+					"name": "props",
+					"typeStr": "16"
+				},
+				{
+					"name": "tileProps",
+					"typeStr": "8"
+				},
+				{
+					"name": "layers",
+					"typeStr": "8"
+				},
+				{
+					"typeStr": "8",
+					"name": "entities"
+				},
+				{
+					"typeStr": "8",
+					"name": "triggers"
+				}
+			],
+			"lines": [
+				{
+					"id": "intro",
+					"width": 20,
+					"height": 15,
+					"tileProps": [],
+					"layers": [
+						{
+							"name": "background",
+							"data": {
+								"file": "img/level/Tileset.png",
+								"size": 16,
+								"stride": 8,
+								"data": "LAAsACwALAAsACwALAAsACwALAAsACwALAAsACwALAAsACwALAAsADUANQA1ADUANAA1ADUANQA1ADUANAA1ADQANQA0ADUANAA1ADUANQA0ADQANAA1ADQANQA0ADUANAA0ADQANAA1ADUANQA0ADUANQA0ADUANAA0ADQANAA0ADQANQA0ADQANAA1ADQANQA0ADQANAA0ADQANQA0ADQANAA1ADUANQA1ADUANAA1ADUANAA0ADUANQA1ADUANQA1ADUANQA1ADUANQA0ADUANQA0ADUANQA0ADUANAA0ADUANAA1ADQANAA0ADQANAA1ADQANQA0ADQANAA0ADUANAA1ADQANQA1ADQANAA1ADUANAA0ADUANQA0ADQANQA1ADUANQA0ADUANQA0ADUANAA0ADQANAA0ADUANAA0ADQANQA0ADQANAA0ADQANAA1ADQANQA0ADUANAA0ADQANAA1ADUANAA1ADUANQA1ADQANAA0ADQANAA1ADQANQA0ADUANAA1ADQANAA0ADUANAA0ADUANAA0ADQANQA0ADUANAA0ADQANQA0AAAAAAA0ADUAAAA0ADUANQA1ADUANAA1ADUANQA1ADUANQA0ADQANAAAADQANQA1ADUANQA0ADUANAA0ADQANQA1ADQANAA1ADUANQA0ADUANAA0AAAAAAA1ADQANAA0ADQANQA1ADQANQA0ADQANQA0ADUANAA1ADUANAA1ADUANQA0ADUANQA1ADQANAA0ADUANQA1ADUANAA0ADQANQA0AAAAAAA1ADUA"
+							}
+						},
+						{
+							"name": "backdetail",
+							"data": {
+								"file": "img/level/Tileset.png",
+								"size": 16,
+								"stride": 8,
+								"data": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZABoAGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIQAiACMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACkAKgArAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGQAaABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACEAIgAjAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApACoAKwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+							}
+						},
+						{
+							"name": "level",
+							"data": {
+								"file": "img/level/Tileset.png",
+								"size": 16,
+								"stride": 8,
+								"data": "EgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAEAAQACAAIAAgACAAIAAgA6ADoAOgAEAAAAAAAAAAAAAAAAAAAAEQARAAoACgAKAAoACgAKAAoACgAKAAoACwAAAAAAAAAAAAAAAAAAAAAAEQAGAAoACgAKAAoACgAKAAoACgAKAAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAJAAoACgAKAAoACgAKAAoACgALAAAAAAAAAAAAAAAAAAAAAAAAAAAACQAKAAoACgAKAAoACgAKAAoACwAAAAAAAAAAAAAAAAAAAAAAAAAAAAkACgAKAAoACgAKAAoACgAKAAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAJAAoACgAKAAoACgAKAAoACgANAAIAAgACAAIAAgACAAIAOgA6ADoADgAKAAoACgAKAAoA"
+							}
+						},
+						{
+							"name": "foreground",
+							"data": {
+								"file": "img/level/Tileset.png",
+								"size": 16,
+								"stride": 8,
+								"data": "AAAAAAAAAAAvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAmAAAANgAnAAAAAAAAAAAAAAAAAAAAAAAPABAAAAAAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAAAAAAAAAAAALgAAAAAAAAAAAAAAGAAAAAAAAAAPAAAAAAAAAAAAAAAAAAAAAAAAADYARwBIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABXAAAAWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJgAnADYAAAAXAAAAAAAAAAAA"
+							}
+						}
+					],
+					"props": {
+						"tileSize": 16,
+						"layers": [
+							{
+								"l": "level",
+								"p": {
+									"alpha": 1
+								}
+							},
+							{
+								"l": "background",
+								"p": {
+									"alpha": 1
+								}
+							},
+							{
+								"l": "foreground",
+								"p": {
+									"alpha": 1
+								}
+							},
+							{
+								"l": "entities",
+								"p": {
+									"alpha": 1
+								}
+							},
+							{
+								"l": "backdetail",
+								"p": {
+									"alpha": 1
+								}
+							},
+							{
+								"l": "triggers",
+								"p": {
+									"alpha": 1,
+									"color": 16711680
+								}
+							}
+						]
+					},
+					"entities": [
+						{
+							"x": 1,
+							"y": 7,
+							"kind": "player",
+							"id": "player"
+						}
+					],
+					"triggers": [
+						{
+							"x": 19,
+							"y": 0,
+							"width": 1,
+							"height": 7,
+							"action": [
+								0,
+								true
+							]
+						},
+						{
+							"x": 0,
+							"y": 5,
+							"width": 3,
+							"height": 3,
+							"action": [
+								1
+							]
+						},
+						{
+							"x": 11,
+							"y": 11,
+							"width": 3,
+							"height": 3,
+							"action": [
+								1
+							]
+						}
+					]
+				},
+				{
+					"id": "lvl2",
+					"width": 20,
+					"height": 15,
+					"tileProps": [],
+					"layers": [
+						{
+							"name": "background",
+							"data": {
+								"file": "img/level/Tileset.png",
+								"size": 16,
+								"stride": 8,
+								"data": "NQA0ADUANAA0ADQANAA0ADQANQA1ADQANAA1ADUANQA1ADQANQA1ADQANQA1ADUANAA1ADUANQA1ADUANAA0ADQANAA0ADUANAA0ADUANQA0ADUANAA1ADUANQA0ADQANQA1ADQANQA1ADQANQA0ADUANAA0ADUANAA0ADQANQA1ADQANAA1ADUANQA1ADUANAA1ADUANQA0ADUANAA0ADUANQA1ADQANAA1ADQANAA1ADQANQA0ADUANAA0ADQANQA0ADQANAA0ADQANQA1ADQANQA0ADQANQA0ADQANQA1ADUANQA1ADUANQA0ADUANQA1ADQANAA0ADQANQA1ADUANQA1ADUANQA1ADUANAA0ADQANQA0ADQANAA1ADQANAA1ADUANAA1ADUANAA1ADQANAA0ADQANQA0ADQANQA0ADQANQA0ADUANQA0ADUANAA1ADQANQA0ADQANAA0ADUANAA0ADQANAA0ADUANAA1ADUANQA1ADUANAA0ADUANAA0ADUANQA1ADQANAA1ADQANAA0ADQANAA1ADQANQA1ADQANAA0ADUANQA1ADQANQA1ADUANQA1ADUANQA0ADUANAA0ADUANAA1ADUANQA1ADUANAA0ADUANAA1ADUANQA1ADUANQA0ADQANQA1ADQANQA0ADQANQA1ADQANQA0ADQANQA1ADQANQA1ADUANQA1ADUANAA0ADQANAA1ADUANAA1ADUANAA1ADQANQA0ADUANAA1ADQANQA1ADUANQA1ADQANQA0ADUANAA1ADUANQA0ADQA"
+							}
+						},
+						{
+							"name": "level",
+							"data": {
+								"file": "img/level/Tileset.png",
+								"size": 16,
+								"stride": 8,
+								"data": "AAAAAAAAAAAAAAAAAAAAAAAACQALAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkACwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJAAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACQANAAIAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkABQASABMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJAAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACQALAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkACwAAAAAAQwABAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJAAsAAAAAAAAACQANAAIAAgACAAIAAAAAAAAAAAAAAAAAAAAAAAAAEQATAAAAAAAAAAkACgAKAAoACgAKAAIAAgADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARABIAEgASAAYACgAKAAoACwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJAAoACgAKAAsAAAAAAAAAAAABAAIAAgADAAAAVwAAAAAAAAAAAAAACQAKAAoACgALAAAAAAAAAAAACQAKAAoACwAAAAEAAgACAAIAAgACAA4ACgAKAAoADQACAAIAAgACAA4ACgAKAAsASwAJAAoACgAKAAoACgAKAAoA"
+							}
+						},
+						{
+							"name": "foreground",
+							"data": {
+								"file": "img/level/Tileset.png",
+								"size": 16,
+								"stride": 8,
+								"data": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVQAAAAAAAAAAAAAAAAAAACYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+							}
+						}
+					],
+					"entities": [
+						{
+							"x": 1,
+							"y": 9,
+							"kind": "player",
+							"id": ""
+						}
+					],
+					"triggers": [],
+					"props": {
+						"tileSize": 16,
+						"layers": [
+							{
+								"l": "entities",
+								"p": {
+									"alpha": 1
+								}
+							},
+							{
+								"l": "triggers",
+								"p": {
+									"alpha": 1,
+									"color": 16711680
+								}
+							},
+							{
+								"l": "level",
+								"p": {
+									"alpha": 1
+								}
+							},
+							{
+								"l": "foreground",
+								"p": {
+									"alpha": 1
+								}
+							},
+							{
+								"l": "background",
+								"p": {
+									"alpha": 1
+								}
+							}
+						]
+					}
+				}
+			],
+			"separators": [],
+			"props": {
+				"level": {
+					"tileSets": {
+						"img/level/Tileset.png": {
+							"stride": 8,
+							"sets": [
+								{
+									"x": 5,
+									"y": 5,
+									"w": 1,
+									"h": 1,
+									"t": "object",
+									"opts": {}
+								}
+							],
+							"props": [
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								null,
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								},
+								null,
+								null,
+								null,
+								null,
+								null,
+								null,
+								{
+									"collision": "full"
+								},
+								{
+									"collision": "full"
+								}
+							]
+						}
+					}
+				}
+			}
+		},
+		{
+			"name": "levels@tileProps",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:collision",
+					"name": "collision"
+				}
+			]
+		},
+		{
+			"name": "levels@layers",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"name": "name",
+					"typeStr": "1"
+				},
+				{
+					"name": "data",
+					"typeStr": "15"
+				}
+			]
+		},
+		{
+			"name": "levels@entities",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:entity",
+					"name": "kind",
+					"display": null
+				},
+				{
+					"typeStr": "0",
+					"name": "id",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "x",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "y",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "levels@triggers",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "3",
+					"name": "x",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "y",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "width",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "height",
+					"display": null
+				},
+				{
+					"typeStr": "9:Action",
+					"name": "action"
+				}
+			]
+		}
+	],
+	"customTypes": [
+		{
+			"name": "Action",
+			"cases": [
+				{
+					"name": "NextLevel",
+					"args": [
+						{
+							"name": "right",
+							"typeStr": "2"
+						}
+					]
+				},
+				{
+					"name": "RefreshJump",
+					"args": []
+				}
+			]
+		}
+	],
+	"compress": false
+}
