@@ -6,3 +6,4 @@
 -js bin/game.js
 -main Game
 -dce full
+-D 640x480
