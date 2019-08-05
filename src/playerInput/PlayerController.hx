@@ -9,4 +9,6 @@ interface PlayerController {
 
 	public var jumpDown(get, null):Bool;
 	public var jumpPressed(get, null):Bool;
+
+	public function destroy():Void;
 }

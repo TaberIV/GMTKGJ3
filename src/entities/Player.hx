@@ -204,6 +204,7 @@ class Player extends Actor {
 
 	override function destroy() {
 		super.destroy();
+		controller.destroy();
 		controller = null;
 	}
 }

@@ -30,4 +30,9 @@ class PlayerAdditive implements PlayerController {
 		key = new PlayerKeyboard();
 		pad = new PlayerPad();
 	}
+
+	public function destroy() {
+		pad.destroy();
+		key.destroy();
+	}
 }

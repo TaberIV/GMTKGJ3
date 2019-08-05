@@ -47,4 +47,6 @@ class PlayerKeyboard implements PlayerController {
 	}
 
 	public function new() {}
+
+	public function destroy() {}
 }

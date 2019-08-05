@@ -1,4 +1,4 @@
--lib heaps:git:git@github.com:HeapsIO/heaps.git#ac34234
+-lib heaps:git:git@github.com:HeapsIO/heaps.git
 -lib hlsdl
 -lib castle
 -lib taber
